@@ -1,4 +1,4 @@
-package gestorvisitasapp.system;
+package org.gestorvisitasapp.system;
 
 public class Principal {
 

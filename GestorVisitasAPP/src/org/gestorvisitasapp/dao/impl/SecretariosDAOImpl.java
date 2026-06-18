@@ -14,7 +14,7 @@ public class SecretariosDAOImpl implements SecretariosDAO {
     
     @Override
     public boolean insertar(Secretarios objeto) {
-        String sql = "{call sp_insertar_Secretarios(?, ?, ?, ?, ?, ?)}";
+        String sql = "{call sp_agregar_Secretarios(?, ?, ?, ?, ?, ?)}";
         try (Connection con = Conexion.getInstancia().conectar();
             CallableStatement cs = con.prepareCall(sql)) {
             cs.setInt(1, objeto.getIdSecretario());

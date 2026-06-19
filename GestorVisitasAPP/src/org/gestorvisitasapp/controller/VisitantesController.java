@@ -39,7 +39,7 @@ public class VisitantesController {
     }
 
     private void registrar() {
-        int idVisitante = vista.solicitarIdVisitante();
+        int idVisitante = vista.solicitarId();
         String nombres = vista.solicitarNombres();
         String apellidos = vista.solicitarApellidos();
         String tipoVisitante = vista.solicitarTipoVisitante();
@@ -63,7 +63,7 @@ public class VisitantesController {
     }
 
     private void buscar() {
-        int idVisitante = vista.solicitarIdVisitante();
+        int idVisitante = vista.solicitarId();
         Visitantes v = dao.buscar(idVisitante);
         if (v != null) {
             vista.desplegarVisitante(v);
@@ -73,7 +73,7 @@ public class VisitantesController {
     }
 
     private void actualizar() {
-        int idVisitante = vista.solicitarIdVisitante();
+        int idVisitante = vista.solicitarId();
         Visitantes existente = dao.buscar(idVisitante);
 
         if (existente == null) {
@@ -111,7 +111,7 @@ public class VisitantesController {
     }
 
     private void eliminar() {
-        int idVisitante = vista.solicitarIdVisitante();
+        int idVisitante = vista.solicitarId();
         if (dao.eliminar(idVisitante)) {
             vista.mostrarMensaje("Visitante eliminado de la base de datos.");
         } else {

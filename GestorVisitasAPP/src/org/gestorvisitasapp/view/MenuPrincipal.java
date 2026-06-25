@@ -4,6 +4,7 @@ import java.util.Scanner;
 import org.gestorvisitasapp.controller.VisitantesController;
 import org.gestorvisitasapp.controller.SecretariosController;
 import org.gestorvisitasapp.controller.AreasController;
+import org.gestorvisitasapp.controller.VehiculosController;
 
 public class MenuPrincipal {
     private final Scanner scanner = new Scanner(System.in);
@@ -37,8 +38,11 @@ public class MenuPrincipal {
                     AreasController controlAreas = new AreasController();
                     controlAreas.iniciar();
                 }
+                case 5 -> {
+                    VehiculosController controlVehiculos = new VehiculosController();
+                    controlVehiculos.iniciar();
+                }
                 case 4 -> System.out.println("Modulo de Gafetes - Pendiente (Angel)");
-                case 5 -> System.out.println("Modulo de Vehiculos - Pendiente (Angel)");
                 case 6 -> System.out.println("Modulo de Visitas - Pendiente (Angel)");
                 case 0 -> System.out.println("\nCerrando sistema... Hasta luego!");
                 default -> System.out.println("Opcion no valida.");

@@ -1,13 +1,23 @@
 package org.gestorvisitasapp.system;
 
-import org.gestorvisitasapp.view.MenuPrincipal;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Principal {
+public class Principal extends Application {
     
-    public static void main(String[] args) {
-        System.out.println("Hola mundo!");
-        MenuPrincipal menu = new MenuPrincipal();
-        menu.arrancarSistema();
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/org/gestorvisitasapp/fxml/MenuPrincipalFX.fxml"));
+        Scene scene = new Scene(root);
+        stage.setTitle("Gestor de Visitantes - Kinal");
+        stage.setScene(scene);
+        stage.show();
     }
     
+    public static void main(String[] args) {
+        launch(args); 
+    }
 }

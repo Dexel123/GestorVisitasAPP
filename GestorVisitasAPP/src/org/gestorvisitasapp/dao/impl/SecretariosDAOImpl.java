@@ -11,21 +11,19 @@ import java.util.List;
 import org.gestorvisitasapp.dao.SecretariosDAO;
 
 public class SecretariosDAOImpl implements SecretariosDAO {
-    
+
     @Override
     public boolean insertar(Secretarios objeto) {
-        String sql = "{call sp_agregar_Secretarios(?, ?, ?, ?, ?, ?)}";
+        String sql = "{call sp_agregar_secretarios(?,?,?,?)}";
         try (Connection con = Conexion.getInstancia().conectar();
-            CallableStatement cs = con.prepareCall(sql)) {
+             CallableStatement cs = con.prepareCall(sql)) {
             cs.setInt(1, objeto.getIdSecretario());
             cs.setString(2, objeto.getNombres());
             cs.setString(3, objeto.getApellidos());
             cs.setString(4, objeto.getCargoPuesto());
-            cs.setString(5, objeto.getCorreoElectronico());
-            cs.setString(6, objeto.getJornadaLaboral());
             return cs.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Error [Insertar Secretarios]: " + e.getMessage());
+            System.err.println("Error [Insertar Secretario]: " + e.getMessage());
             return false;
         }
     }
@@ -33,18 +31,16 @@ public class SecretariosDAOImpl implements SecretariosDAO {
     @Override
     public List<Secretarios> listar() {
         List<Secretarios> lista = new ArrayList<>();
-        String sql = "{call sp_listar_Secretarios()}";
+        String sql = "{call sp_listar_secretarios()}";
         try (Connection con = Conexion.getInstancia().conectar();
              CallableStatement cs = con.prepareCall(sql);
              ResultSet rs = cs.executeQuery()) {
             while (rs.next()) {
                 lista.add(new Secretarios(
-                rs.getInt("id_secretario"),
-                rs.getString("nombres"),
-                rs.getString("apellidos"),
-                rs.getString("cargo_puesto"),
-                rs.getString("correo_electronico"),
-                rs.getString("jornada_laboral")
+                    rs.getInt("id_secretario"),
+                    rs.getString("nombres"),
+                    rs.getString("apellidos"),
+                    rs.getString("cargo_puesto")
                 ));
             }
         } catch (SQLException e) {
@@ -55,57 +51,52 @@ public class SecretariosDAOImpl implements SecretariosDAO {
 
     @Override
     public Secretarios buscar(Integer id) {
-        String sql = "{call sp_buscar_Secretarios(?)}";
+        String sql = "{call sp_buscar_secretarios(?)}";
         try (Connection con = Conexion.getInstancia().conectar();
              CallableStatement cs = con.prepareCall(sql)) {
             cs.setInt(1, id);
             try (ResultSet rs = cs.executeQuery()) {
                 if (rs.next()) {
                     return new Secretarios(
-                    rs.getInt("id_secretario"),
-                    rs.getString("nombres"),
-                    rs.getString("apellidos"),
-                    rs.getString("cargo_puesto"),
-                    rs.getString("correo_electronico"),
-                    rs.getString("jornada_laboral")
+                        rs.getInt("id_secretario"),
+                        rs.getString("nombres"),
+                        rs.getString("apellidos"),
+                        rs.getString("cargo_puesto")
                     );
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Error [Buscar Secretarios]: " + e.getMessage());
+            System.err.println("Error [Buscar Secretario]: " + e.getMessage());
         }
         return null;
     }
 
     @Override
     public boolean actualizar(Secretarios objeto) {
-        String sql = "{call sp_actualizar_Secretarios(?, ?, ?, ?, ?, ?)}";
+        String sql = "{call sp_actualizar_secretarios(?,?,?,?)}";
         try (Connection con = Conexion.getInstancia().conectar();
-            CallableStatement cs = con.prepareCall(sql)) {
+             CallableStatement cs = con.prepareCall(sql)) {
             cs.setInt(1, objeto.getIdSecretario());
             cs.setString(2, objeto.getNombres());
             cs.setString(3, objeto.getApellidos());
             cs.setString(4, objeto.getCargoPuesto());
-            cs.setString(5, objeto.getCorreoElectronico());
-            cs.setString(6, objeto.getJornadaLaboral());
             return cs.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Error [Actualizar Secretarios]: " + e.getMessage());
+            System.err.println("Error [Actualizar Secretario]: " + e.getMessage());
             return false;
         }
     }
 
     @Override
     public boolean eliminar(Integer id) {
-        String sql = "{call sp_eliminar_Secretarios(?)}";
+        String sql = "{call sp_eliminar_secretarios(?)}";
         try (Connection con = Conexion.getInstancia().conectar();
              CallableStatement cs = con.prepareCall(sql)) {
             cs.setInt(1, id);
             return cs.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Error [Eliminar Secretarios]: " + e.getMessage());
+            System.err.println("Error [Eliminar Secretario]: " + e.getMessage());
             return false;
         }
     }
-    
 }

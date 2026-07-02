@@ -1,27 +1,26 @@
 package org.gestorvisitasapp.dao.impl;
 
-import org.gestorvisitasapp.util.Conexion; 
-import org.gestorvisitasapp.model.Visitantes; 
+import org.gestorvisitasapp.util.Conexion;
+import org.gestorvisitasapp.model.Visitantes;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import org.gestorvisitasapp.dao.VisitantesDAO; 
+import org.gestorvisitasapp.dao.VisitantesDAO;
 
 public class VisitantesDAOImpl implements VisitantesDAO {
-    
+
     @Override
     public boolean insertar(Visitantes objeto) {
-        String sql = "{call sp_agregar_visitantes(?,?,?,?,?)}";
+        String sql = "{call sp_agregar_visitantes(?,?,?,?)}";
         try (Connection con = Conexion.getInstancia().conectar();
              CallableStatement cs = con.prepareCall(sql)) {
             cs.setInt(1, objeto.getIdVisitante());
             cs.setString(2, objeto.getNombres());
             cs.setString(3, objeto.getApellidos());
             cs.setString(4, objeto.getTipoVisitante());
-            cs.setString(5, objeto.getTelefonoContacto());
             return cs.executeUpdate() > 0;
         } catch (SQLException e) {
             System.err.println("Error [Insertar Visitante]: " + e.getMessage());
@@ -41,8 +40,7 @@ public class VisitantesDAOImpl implements VisitantesDAO {
                     rs.getInt("id_visitante"),
                     rs.getString("nombres"),
                     rs.getString("apellidos"),
-                    rs.getString("tipo_visitante"),
-                    rs.getString("telefono_contacto")
+                    rs.getString("tipo_visitante")
                 ));
             }
         } catch (SQLException e) {
@@ -63,8 +61,7 @@ public class VisitantesDAOImpl implements VisitantesDAO {
                         rs.getInt("id_visitante"),
                         rs.getString("nombres"),
                         rs.getString("apellidos"),
-                        rs.getString("tipo_visitante"),
-                        rs.getString("telefono_contacto")
+                        rs.getString("tipo_visitante")
                     );
                 }
             }
@@ -76,14 +73,13 @@ public class VisitantesDAOImpl implements VisitantesDAO {
 
     @Override
     public boolean actualizar(Visitantes objeto) {
-        String sql = "{call sp_actualizar_visitantes(?,?,?,?,?)}";
+        String sql = "{call sp_actualizar_visitantes(?,?,?,?)}";
         try (Connection con = Conexion.getInstancia().conectar();
              CallableStatement cs = con.prepareCall(sql)) {
             cs.setInt(1, objeto.getIdVisitante());
             cs.setString(2, objeto.getNombres());
             cs.setString(3, objeto.getApellidos());
             cs.setString(4, objeto.getTipoVisitante());
-            cs.setString(5, objeto.getTelefonoContacto());
             return cs.executeUpdate() > 0;
         } catch (SQLException e) {
             System.err.println("Error [Actualizar Visitante]: " + e.getMessage());
@@ -104,4 +100,3 @@ public class VisitantesDAOImpl implements VisitantesDAO {
         }
     }
 }
-    

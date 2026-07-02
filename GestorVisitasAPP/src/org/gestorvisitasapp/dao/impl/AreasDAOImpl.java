@@ -11,21 +11,18 @@ import java.util.List;
 import org.gestorvisitasapp.dao.AreasDAO;
 
 public class AreasDAOImpl implements AreasDAO {
-    
+
     @Override
     public boolean insertar(Areas objeto) {
-        String sql = "{call sp_agregar_areas(?, ?, ?, ?, ?, ?)}";
+        String sql = "{call sp_agregar_areas(?,?,?)}";
         try (Connection con = Conexion.getInstancia().conectar();
-            CallableStatement cs = con.prepareCall(sql)) {
+             CallableStatement cs = con.prepareCall(sql)) {
             cs.setInt(1, objeto.getIdArea());
             cs.setString(2, objeto.getNombreArea());
-            cs.setString(3, objeto.getNumeroSalonTaller());
-            cs.setString(4, objeto.getSectorEdificio());
-            cs.setString(5, objeto.getNivelPiso());
-            cs.setString(6, objeto.getCarreraTecnicaAsignada());
+            cs.setString(3, objeto.getCarreraTecnicaAsignada());
             return cs.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Error [Insertar Areas]: " + e.getMessage());
+            System.err.println("Error [Insertar Area]: " + e.getMessage());
             return false;
         }
     }
@@ -41,9 +38,6 @@ public class AreasDAOImpl implements AreasDAO {
                 lista.add(new Areas(
                     rs.getInt("id_area"),
                     rs.getString("nombre_area"),
-                    rs.getString("numero_salon_taller"),
-                    rs.getString("sector_edificio"),
-                    rs.getString("nivel_piso"),
                     rs.getString("carrera_tecnica_asignada")
                 ));
             }
@@ -64,33 +58,27 @@ public class AreasDAOImpl implements AreasDAO {
                     return new Areas(
                         rs.getInt("id_area"),
                         rs.getString("nombre_area"),
-                        rs.getString("numero_salon_taller"),
-                        rs.getString("sector_edificio"),
-                        rs.getString("nivel_piso"),
                         rs.getString("carrera_tecnica_asignada")
                     );
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Error [Buscar Areas]: " + e.getMessage());
+            System.err.println("Error [Buscar Area]: " + e.getMessage());
         }
         return null;
     }
 
     @Override
     public boolean actualizar(Areas objeto) {
-        String sql = "{call sp_actualizar_areas(?, ?, ?, ?, ?, ?)}";
+        String sql = "{call sp_actualizar_areas(?,?,?)}";
         try (Connection con = Conexion.getInstancia().conectar();
-            CallableStatement cs = con.prepareCall(sql)) {
+             CallableStatement cs = con.prepareCall(sql)) {
             cs.setInt(1, objeto.getIdArea());
             cs.setString(2, objeto.getNombreArea());
-            cs.setString(3, objeto.getNumeroSalonTaller());
-            cs.setString(4, objeto.getSectorEdificio());
-            cs.setString(5, objeto.getNivelPiso());
-            cs.setString(6, objeto.getCarreraTecnicaAsignada());
+            cs.setString(3, objeto.getCarreraTecnicaAsignada());
             return cs.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Error [Actualizar Areas]: " + e.getMessage());
+            System.err.println("Error [Actualizar Area]: " + e.getMessage());
             return false;
         }
     }
@@ -103,9 +91,8 @@ public class AreasDAOImpl implements AreasDAO {
             cs.setInt(1, id);
             return cs.executeUpdate() > 0;
         } catch (SQLException e) {
-            System.err.println("Error [Eliminar Areas]: " + e.getMessage());
+            System.err.println("Error [Eliminar Area]: " + e.getMessage());
             return false;
         }
     }
-    
 }

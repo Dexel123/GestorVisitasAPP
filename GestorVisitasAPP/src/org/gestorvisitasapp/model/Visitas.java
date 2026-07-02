@@ -6,49 +6,58 @@ public class Visitas {
     private String fecha_hora_entrada;
     private String fecha_hora_salida;
     private String motivo_visita;
-    private String nombre_alumno_relacionado;
-    private String grado_seccion_alumno;
+
+    private int id_visitante;
+    private int id_secretario;
+    private int id_area;
+    private Integer id_gafete;
+    private String placa;
+
     private String nombres;
     private String apellidos;
     private String tipo_visitante;
     private String nombre_secretario;
     private String nombre_area;
-    private String sector_edificio;
     private String tipo_gafete;
-    private String estado_de_vuelta;
-    private String placa;
-    private String marca;
-    private String color;
+    private String tipo_vehiculo;
+    private String color_vehiculo;
 
-      public Visitas() {
+    public Visitas() {
     }
-      
-        public Visitas(int id_visita, String fecha_hora_entrada, String fecha_hora_salida, String motivo_visita, String nombre_alumno_relacionado, String grado_seccion_alumno, String nombres, String apellidos, String tipo_visitante, String nombre_secretario, String nombre_area, String sector_edificio, String tipo_gafete, String estado_de_vuelta, String placa, String marca, String color) {
+
+    public Visitas(int id_visita, String motivo_visita, int id_visitante, int id_secretario, int id_area, Integer id_gafete, String placa) {
+        this.id_visita = id_visita;
+        this.motivo_visita = motivo_visita;
+        this.id_visitante = id_visitante;
+        this.id_secretario = id_secretario;
+        this.id_area = id_area;
+        this.id_gafete = id_gafete;
+        this.placa = placa;
+    }
+
+    public Visitas(int id_visita, String fecha_hora_entrada, String fecha_hora_salida, String motivo_visita,
+                   String nombres, String apellidos, String tipo_visitante, String nombre_secretario,
+                   String nombre_area, String tipo_gafete, String placa, String tipo_vehiculo, String color_vehiculo) {
+        
         this.id_visita = id_visita;
         this.fecha_hora_entrada = fecha_hora_entrada;
         this.fecha_hora_salida = fecha_hora_salida;
         this.motivo_visita = motivo_visita;
-        this.nombre_alumno_relacionado = nombre_alumno_relacionado;
-        this.grado_seccion_alumno = grado_seccion_alumno;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.tipo_visitante = tipo_visitante;
         this.nombre_secretario = nombre_secretario;
         this.nombre_area = nombre_area;
-        this.sector_edificio = sector_edificio;
         this.tipo_gafete = tipo_gafete;
-        this.estado_de_vuelta = estado_de_vuelta;
         this.placa = placa;
-        this.marca = marca;
-        this.color = color;
+        this.tipo_vehiculo = tipo_vehiculo;
+        this.color_vehiculo = color_vehiculo;
     }
 
-      
     public int getId_visita() {
         return id_visita;
     }
 
-  
     public void setId_visita(int id_visita) {
         this.id_visita = id_visita;
     }
@@ -77,20 +86,44 @@ public class Visitas {
         this.motivo_visita = motivo_visita;
     }
 
-    public String getNombre_alumno_relacionado() {
-        return nombre_alumno_relacionado;
+    public int getId_visitante() {
+        return id_visitante;
     }
 
-    public void setNombre_alumno_relacionado(String nombre_alumno_relacionado) {
-        this.nombre_alumno_relacionado = nombre_alumno_relacionado;
+    public void setId_visitante(int id_visitante) {
+        this.id_visitante = id_visitante;
     }
 
-    public String getGrado_seccion_alumno() {
-        return grado_seccion_alumno;
+    public int getId_secretario() {
+        return id_secretario;
     }
 
-    public void setGrado_seccion_alumno(String grado_seccion_alumno) {
-        this.grado_seccion_alumno = grado_seccion_alumno;
+    public void setId_secretario(int id_secretario) {
+        this.id_secretario = id_secretario;
+    }
+
+    public int getId_area() {
+        return id_area;
+    }
+
+    public void setId_area(int id_area) {
+        this.id_area = id_area;
+    }
+
+    public Integer getId_gafete() {
+        return id_gafete;
+    }
+
+    public void setId_gafete(Integer id_gafete) {
+        this.id_gafete = id_gafete;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     public String getNombres() {
@@ -133,14 +166,6 @@ public class Visitas {
         this.nombre_area = nombre_area;
     }
 
-    public String getSector_edificio() {
-        return sector_edificio;
-    }
-
-    public void setSector_edificio(String sector_edificio) {
-        this.sector_edificio = sector_edificio;
-    }
-
     public String getTipo_gafete() {
         return tipo_gafete;
     }
@@ -149,40 +174,24 @@ public class Visitas {
         this.tipo_gafete = tipo_gafete;
     }
 
-    public String getEstado_de_vuelta() {
-        return estado_de_vuelta;
+    public String getTipo_vehiculo() {
+        return tipo_vehiculo;
     }
 
-    public void setEstado_de_vuelta(String estado_de_vuelta) {
-        this.estado_de_vuelta = estado_de_vuelta;
+    public void setTipo_vehiculo(String tipo_vehiculo) {
+        this.tipo_vehiculo = tipo_vehiculo;
     }
 
-    public String getPlaca() {
-        return placa;
+    public String getColor_vehiculo() {
+        return color_vehiculo;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public void setColor_vehiculo(String color_vehiculo) {
+        this.color_vehiculo = color_vehiculo;
     }
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-    
-        @Override
+    @Override
     public String toString() {
-         return "ID: " + id_visita + " | Fecha y hora de entrada: " + fecha_hora_entrada + " | Fecha y hora salida: " + fecha_hora_salida  + " | Motivo Visita   : " + motivo_visita + " | Nombre Alumno Relacionado   : " + nombre_alumno_relacionado + " | Grado Seccion Alumno   : " + grado_seccion_alumno + " | Nombres   : " + nombres + " | Apellidos   : " + apellidos + " | Tipo Visitante   : " + tipo_visitante + " | Nombre Secretario   : " + nombre_secretario  + " | Nombre Area   : " + nombre_area + " | Sector Edificio   : " + sector_edificio + " | Tipo Gafete   : " + tipo_gafete + " | Estado de Vuelta   : " + estado_de_vuelta + " | Placa   : " + placa + " | Marca   : " + marca + " | Color   : " + color;
+        return "ID: " + id_visita + " | Motivo: " + motivo_visita;
     }
 }

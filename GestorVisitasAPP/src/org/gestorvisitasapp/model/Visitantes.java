@@ -1,21 +1,20 @@
 package org.gestorvisitasapp.model;
 
 public class Visitantes {
-    private int idVisitante; 
-    private String nombres; 
-    private String apellidos; 
-    private String tipoVisitante; 
-    private String telefonoContacto; 
+    
+    private int idVisitante;
+    private String nombres;
+    private String apellidos;
+    private String tipoVisitante;
 
     public Visitantes() {
     }
-    
-    public Visitantes(int idVisiante, String nombres, String apellidos, String tipoVisitante, String telefonoContacto) {
-        this.idVisitante = idVisitante; 
-        this.nombres = nombres; 
-        this.apellidos = apellidos; 
-        this.tipoVisitante = tipoVisitante; 
-        this.telefonoContacto = telefonoContacto; 
+
+    public Visitantes(int idVisitante, String nombres, String apellidos, String tipoVisitante) {
+        this.idVisitante = idVisitante;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.tipoVisitante = tipoVisitante;
     }
 
     public int getIdVisitante() {
@@ -50,18 +49,8 @@ public class Visitantes {
         this.tipoVisitante = tipoVisitante;
     }
 
-    public String getTelefonoContacto() {
-        return telefonoContacto;
-    }
-
-    public void setTelefonoContacto(String telefonoContacto) {
-        this.telefonoContacto = telefonoContacto;
-    }
-
     @Override
     public String toString() {
-         return "ID: " + idVisitante + " | Nombre: " + nombres + " " + apellidos + " | Tipo: " + tipoVisitante + " | Telefono   : " + telefonoContacto;
-    }
-            
-    
+        return "ID: " + idVisitante + " | Nombre: " + nombres + " " + apellidos + " | Tipo: " + tipoVisitante;
+    } 
 }

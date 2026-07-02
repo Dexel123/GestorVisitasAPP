@@ -1,5 +1,6 @@
 package org.gestorvisitasapp.fxml;
 
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,6 +12,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.layout.BorderPane;
 import org.gestorvisitasapp.dao.impl.VisitantesDAOImpl;
 import org.gestorvisitasapp.dao.impl.SecretariosDAOImpl;
 import org.gestorvisitasapp.dao.impl.AreasDAOImpl;
@@ -26,6 +30,8 @@ import org.gestorvisitasapp.model.Visitas;
 
 public class MenuPrincipalFXController implements Initializable {
 
+    @FXML private BorderPane rootPane;
+    
     @FXML private Label lblTitulo;
     @FXML private TableView tablaView;
     @FXML private Button btnVisitantes;
@@ -120,20 +126,41 @@ public class MenuPrincipalFXController implements Initializable {
 
     @FXML
     private void cargarVisitas() {
-        tablaView.getColumns().clear();
-        TableColumn<Visitas, Integer> colId = new TableColumn<>("ID");
-        colId.setCellValueFactory(new PropertyValueFactory<>("id_visita"));
-        TableColumn<Visitas, String> colNombres = new TableColumn<>("Nombres");
-        colNombres.setCellValueFactory(new PropertyValueFactory<>("nombres"));
-        TableColumn<Visitas, String> colMotivo = new TableColumn<>("Motivo");
-        colMotivo.setCellValueFactory(new PropertyValueFactory<>("motivo_visita"));
-        TableColumn<Visitas, String> colArea = new TableColumn<>("Area");
-        colArea.setCellValueFactory(new PropertyValueFactory<>("nombre_area"));
-        TableColumn<Visitas, String> colFecha = new TableColumn<>("Entrada");
-        colFecha.setCellValueFactory(new PropertyValueFactory<>("fecha_hora_entrada"));
-        tablaView.getColumns().addAll(colId, colNombres, colMotivo, colArea, colFecha);
-        ObservableList<Visitas> lista = FXCollections.observableArrayList(new VisitasDAOImpl().listar());
-        tablaView.setItems(lista);
-        lblTitulo.setText("Modulo de Visitas");
+//        tablaView.getColumns().clear();
+//        TableColumn<Visitas, Integer> colId = new TableColumn<>("ID");
+//        colId.setCellValueFactory(new PropertyValueFactory<>("id_visita"));
+//        TableColumn<Visitas, String> colNombres = new TableColumn<>("Nombres");
+//        colNombres.setCellValueFactory(new PropertyValueFactory<>("nombres"));
+//        TableColumn<Visitas, String> colMotivo = new TableColumn<>("Motivo");
+//        colMotivo.setCellValueFactory(new PropertyValueFactory<>("motivo_visita"));
+//        TableColumn<Visitas, String> colArea = new TableColumn<>("Area");
+//        colArea.setCellValueFactory(new PropertyValueFactory<>("nombre_area"));
+//        TableColumn<Visitas, String> colFecha = new TableColumn<>("Entrada");
+//        colFecha.setCellValueFactory(new PropertyValueFactory<>("fecha_hora_entrada"));
+//        tablaView.getColumns().addAll(colId, colNombres, colMotivo, colArea, colFecha);
+//        ObservableList<Visitas> lista = FXCollections.observableArrayList(new VisitasDAOImpl().listar());
+//        tablaView.setItems(lista);
+//        lblTitulo.setText("Modulo de Visitas");
+            cambiarEscena("FormularioVisitasFX");
     }
+    
+    private void cambiarEscena(String vista) {
+        try {
+            // Carga el archivo FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(vista + ".fxml"));
+            Parent nodoHijo = loader.load();
+            
+            // Coloca la nueva vista en la sección central de tu BorderPane actual
+            rootPane.setCenter(nodoHijo);
+            
+        } catch (IOException e) {
+            System.err.println("Error al cargar la vista FXML: " + vista);
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.err.println("No se encontró el archivo FXML: " + vista + ".fxml en la ruta especificada.");
+            e.printStackTrace();
+        }
+    }
+    
+
 }

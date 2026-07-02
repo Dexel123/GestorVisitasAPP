@@ -7,24 +7,24 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gestorvisitasapp.fxml.MenuPrincipalFXController">
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="767.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gestorvisitasapp.fxml.MenuPrincipalFXController">
    <top>
       <Label fx:id="lblTitulo" text="Gestor visitantes - Kinal " BorderPane.alignment="CENTER" />
    </top>
    <left>
-      <VBox prefHeight="200.0" prefWidth="150.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnSecretarios" mnemonicParsing="false" onAction="#cargarSecretarios" text="Secretarios " />
-            <Button fx:id="btnAreas" mnemonicParsing="false" onAction="#cargarAreas" text="Areas" />
-            <Button fx:id="btnVisitantes" mnemonicParsing="false" onAction="#cargarVisitantes" text="Visitantes " />
-            <Button fx:id="btnGafetes" mnemonicParsing="false" onAction="#cargarGafetes" text="Gafetes " />
-            <Button fx:id="btnVehiculos" mnemonicParsing="false" onAction="#cargarVehiculos" text="Vehiculos " />
-            <Button fx:id="btnVisitas" mnemonicParsing="false" onAction="#cargarVisitas" text="Visitas " />
+            <Button fx:id="btnSecretarios" mnemonicParsing="false" onAction="#cargarSecretarios" prefHeight="40.0" prefWidth="100.0" text="Secretarios " />
+            <Button fx:id="btnAreas" mnemonicParsing="false" onAction="#cargarAreas" prefHeight="40.0" prefWidth="100.0" text="Areas" />
+            <Button fx:id="btnVisitantes" mnemonicParsing="false" onAction="#cargarVisitantes" prefHeight="40.0" prefWidth="100.0" text="Visitantes " />
+            <Button fx:id="btnGafetes" mnemonicParsing="false" onAction="#cargarGafetes" prefHeight="40.0" prefWidth="100.0" text="Gafetes " />
+            <Button fx:id="btnVehiculos" mnemonicParsing="false" onAction="#cargarVehiculos" prefHeight="40.0" prefWidth="100.0" text="Vehiculos " />
+            <Button fx:id="btnVisitas" mnemonicParsing="false" onAction="#cargarVisitas" prefHeight="40.0" prefWidth="100.0" text="Visitas " />
          </children>
       </VBox>
    </left>
    <center>
-      <TableView fx:id="tablaView" BorderPane.alignment="CENTER">
+      <TableView fx:id="tablaView" prefHeight="421.0" prefWidth="524.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />

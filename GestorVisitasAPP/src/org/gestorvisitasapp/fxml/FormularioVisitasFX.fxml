@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="861.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21.0.1" fx:controller="org.gestorvisitasapp.contoller.FormularioVisitasFXController">
+   <children>
+      <VBox alignment="CENTER" fillWidth="false" layoutX="-8.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="487.0" prefWidth="907.0">
+         <children>
+            <Label text="control de visita" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="452.0" prefWidth="933.0">
+               <children>
+                  <GridPane prefHeight="452.0" prefWidth="237.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="54.0" minWidth="10.0" prefWidth="48.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="10.0" prefWidth="86.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="99.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="10.0" prefWidth="24.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Nombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Motivo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Vehiculo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Quien recibe" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Área a Visitar" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="Gafete" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="txtNombre" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextArea fx:id="txtMotivo" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="rbVehiculo" mnemonicParsing="false" text="si" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <ComboBox fx:id="cmbSecretario" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <ComboBox fx:id="cmbArea" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#accionRegistrarVisita" text="Registrar visita" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                        <ComboBox fx:id="cmbGafete" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <Label text="Apellido" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtApellido" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <VBox prefHeight="452.0" prefWidth="635.0">
+                     <children>
+                        <TableView fx:id="tblVisitas" prefHeight="334.0" prefWidth="635.0">
+                          <columns>
+                            <TableColumn fx:id="colId" prefWidth="75.0" text="C1" />
+                            <TableColumn fx:id="colVisitante" prefWidth="75.0" text="C2" />
+                              <TableColumn fx:id="colMotivo" prefWidth="75.0" text="Column X" />
+                              <TableColumn fx:id="colArea" prefWidth="75.0" text="Column X" />
+                              <TableColumn fx:id="colGafete" prefWidth="75.0" text="Column X" />
+                              <TableColumn fx:id="colSalida" prefWidth="75.0" text="Column X" />
+                          </columns>
+                        </TableView>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="btnMarcarSalida" mnemonicParsing="false" onAction="#accionMarcarSalida" text="Marcar como salida" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="&gt;&gt;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="&lt;&lt;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#accionModificar" text="Modificar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

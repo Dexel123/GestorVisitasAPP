@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -16,92 +15,114 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<AnchorPane id="AnchorPane" prefHeight="520.0" prefWidth="900.0"
+            xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21.0.1"
+            fx:controller="org.gestorvisitasapp.controller.FormularioVisitasFXController">
+    <children>
+        <VBox alignment="CENTER" fillWidth="false" layoutX="0.0" layoutY="0.0"
+              prefHeight="520.0" prefWidth="900.0">
+            <children>
+                <Label text="Control de Visita" textAlignment="CENTER">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <HBox prefHeight="480.0" prefWidth="900.0">
+                    <children>
+                        <!-- FORMULARIO -->
+                        <GridPane prefHeight="480.0" prefWidth="260.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="ID Visita" GridPane.rowIndex="0" />
+                                <TextField fx:id="txtIdVisita" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-<AnchorPane id="AnchorPane" prefHeight="487.0" prefWidth="861.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21.0.1" fx:controller="org.gestorvisitasapp.contoller.FormularioVisitasFXController">
-   <children>
-      <VBox alignment="CENTER" fillWidth="false" layoutX="-8.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="487.0" prefWidth="907.0">
-         <children>
-            <Label text="control de visita" textAlignment="CENTER">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <HBox prefHeight="452.0" prefWidth="933.0">
-               <children>
-                  <GridPane prefHeight="452.0" prefWidth="237.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="54.0" minWidth="10.0" prefWidth="48.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="10.0" prefWidth="86.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="99.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="10.0" prefWidth="24.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Label text="Nombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="Motivo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="Vehiculo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="Quien recibe" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="Área a Visitar" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <Label text="Gafete" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <TextField fx:id="txtNombre" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <TextArea fx:id="txtMotivo" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                        <RadioButton fx:id="rbVehiculo" mnemonicParsing="false" text="si" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                        <ComboBox fx:id="cmbSecretario" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                        <ComboBox fx:id="cmbArea" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                        <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#accionRegistrarVisita" text="Registrar visita" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                        <ComboBox fx:id="cmbGafete" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                        <Label text="Apellido" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField fx:id="txtApellido" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                     </children>
-                  </GridPane>
-                  <VBox prefHeight="452.0" prefWidth="635.0">
-                     <children>
-                        <TableView fx:id="tblVisitas" prefHeight="334.0" prefWidth="635.0">
-                          <columns>
-                            <TableColumn fx:id="colId" prefWidth="75.0" text="C1" />
-                            <TableColumn fx:id="colVisitante" prefWidth="75.0" text="C2" />
-                              <TableColumn fx:id="colMotivo" prefWidth="75.0" text="Column X" />
-                              <TableColumn fx:id="colArea" prefWidth="75.0" text="Column X" />
-                              <TableColumn fx:id="colGafete" prefWidth="75.0" text="Column X" />
-                              <TableColumn fx:id="colSalida" prefWidth="75.0" text="Column X" />
-                          </columns>
-                        </TableView>
-                        <GridPane>
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Button fx:id="btnMarcarSalida" mnemonicParsing="false" onAction="#accionMarcarSalida" text="Marcar como salida" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="&gt;&gt;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="60.0" text="&lt;&lt;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                              <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#accionModificar" text="Modificar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                           </children>
+                                <Label text="Nombre" GridPane.rowIndex="1" />
+                                <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label text="Apellido" GridPane.rowIndex="2" />
+                                <TextField fx:id="txtApellido" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                <Label text="Motivo" GridPane.rowIndex="3" />
+                                <TextArea fx:id="txtMotivo" prefHeight="55.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                                <Label text="¿Vehiculo?" GridPane.rowIndex="4" />
+                                <RadioButton fx:id="rbVehiculo" mnemonicParsing="false" text="Si"
+                                             onAction="#accionToggleVehiculo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                                <Label text="Placa" GridPane.rowIndex="5" />
+                                <TextField fx:id="txtPlaca" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                                <Label text="Quien recibe" GridPane.rowIndex="6" />
+                                <ComboBox fx:id="cmbSecretario" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                                <Label text="Área a Visitar" GridPane.rowIndex="7" />
+                                <ComboBox fx:id="cmbArea" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                                <Label text="Gafete" GridPane.rowIndex="8" />
+                                <ComboBox fx:id="cmbGafete" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                            </children>
                         </GridPane>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </children>
+
+                        <!-- TABLA Y ACCIONES -->
+                        <VBox prefHeight="480.0" prefWidth="640.0">
+                            <children>
+                                <TableView fx:id="tblVisitas" prefHeight="330.0" prefWidth="640.0">
+                                    <columns>
+                                        <TableColumn fx:id="colId" prefWidth="45.0" text="ID" />
+                                        <TableColumn fx:id="colVisitante" prefWidth="140.0" text="Visitante" />
+                                        <TableColumn fx:id="colMotivo" prefWidth="140.0" text="Motivo" />
+                                        <TableColumn fx:id="colArea" prefWidth="120.0" text="Area" />
+                                        <TableColumn fx:id="colGafete" prefWidth="100.0" text="Gafete" />
+                                        <TableColumn fx:id="colSalida" prefWidth="95.0" text="Salida" />
+                                    </columns>
+                                </TableView>
+
+                                <!-- Fila: Nueva visita / Registrar / Modificar / Marcar salida -->
+                                <HBox spacing="10.0" prefHeight="40.0">
+                                    <children>
+                                        <Button fx:id="btnNuevaVisita" onAction="#accionNuevaVisita" text="Nueva visita" />
+                                        <Button fx:id="btnRegistrar" onAction="#accionRegistrarVisita" text="Registrar visita" />
+                                        <Button fx:id="btnModificar" onAction="#accionModificar" text="Modificar" />
+                                        <Button fx:id="btnMarcarSalida" onAction="#accionMarcarSalida" text="Marcar como salida" />
+                                    </children>
+                                </HBox>
+
+                                <!-- Fila: navegación -->
+                                <HBox spacing="10.0" alignment="CENTER" prefHeight="40.0">
+                                    <children>
+                                        <Button fx:id="btnPrimero" onAction="#accionPrimero" text="|&lt;" />
+                                        <Button fx:id="btnAnterior" onAction="#accionAnterior" text="&lt;&lt;" />
+                                        <Button fx:id="btnSiguiente" onAction="#accionSiguiente" text="&gt;&gt;" />
+                                        <Button fx:id="btnUltimo" onAction="#accionUltimo" text="&gt;|" />
+                                    </children>
+                                </HBox>
+
+                                <!-- Fila: filtros -->
+                                <HBox spacing="10.0" alignment="CENTER" prefHeight="40.0">
+                                    <children>
+                                        <Button fx:id="btnVisitasActuales" onAction="#accionVisitasActuales" text="Visitas Actuales" />
+                                        <Button fx:id="btnHistorial" onAction="#accionHistorial" text="Historial" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>

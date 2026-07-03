@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="25.0" prefHeight="400.0" prefWidth="500.0"
+      xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.gestorvisitasapp.controller.SeleccionRolFXController">
+    <padding>
+        <Insets top="60" bottom="60" left="60" right="60" />
+    </padding>
+    <children>
+        <Label text="Gestor de Visitantes" style="-fx-font-size: 26px; -fx-font-weight: bold;" />
+        <Label text="Seleccione su rol para continuar" style="-fx-font-size: 14px;" />
+        <Button text="Administracion" prefWidth="220" prefHeight="50" onAction="#irAdministracion" />
+        <Button text="Secretaria" prefWidth="220" prefHeight="50" onAction="#irSecretaria" />
+    </children>
+</VBox>

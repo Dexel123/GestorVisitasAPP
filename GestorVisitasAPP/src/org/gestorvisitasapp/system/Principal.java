@@ -10,7 +10,7 @@ public class Principal extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/gestorvisitasapp/fxml/MenuPrincipalFX.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/org/gestorvisitasapp/fxml/SeleccionRolFX.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Gestor de Visitantes - Kinal");
         stage.setScene(scene);

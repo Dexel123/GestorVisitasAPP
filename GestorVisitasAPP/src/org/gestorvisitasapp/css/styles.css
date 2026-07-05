@@ -1,0 +1,198 @@
+.fondo-app {
+    -fx-background-color: #1A1D23;
+}
+
+.titulo {
+    -fx-text-fill: #E8E9EB;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.subtitulo {
+    -fx-text-fill: #6E7580;
+    -fx-font-size: 14px;
+}
+
+.label {
+    -fx-text-fill: #E8E9EB;
+    -fx-font-size: 13px;
+}
+
+.panel {
+    -fx-background-color: #2C2F36;
+    -fx-background-radius: 8;
+    -fx-padding: 20;
+}
+
+.btn-primario {
+    -fx-background-color: #3B5A75;
+    -fx-text-fill: #E8E9EB;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.btn-primario:hover {
+    -fx-background-color: #4C6E8C;
+}
+.btn-primario:pressed {
+    -fx-background-color: #2E4A61;
+}
+
+.btn-secundario {
+    -fx-background-color: #2C2F36;
+    -fx-text-fill: #E8E9EB;
+    -fx-border-color: #6E7580;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.btn-secundario:hover {
+    -fx-background-color: #3A3E46;
+}
+
+.menu-lateral {
+    -fx-background-color: #2C2F36;
+    -fx-padding: 20;
+}
+.menu-lateral .button {
+    -fx-background-color: #3B5A75;
+    -fx-text-fill: #E8E9EB;
+    -fx-font-size: 13px;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.menu-lateral .button:hover {
+    -fx-background-color: #4C6E8C;
+}
+
+.text-field, .text-area {
+    -fx-background-color: #1A1D23;
+    -fx-text-fill: #E8E9EB;
+    -fx-border-color: #6E7580;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-prompt-text-fill: #6E7580;
+}
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #3B5A75;
+}
+.text-area .content {
+    -fx-background-color: #1A1D23;
+}
+
+.combo-box {
+    -fx-background-color: #1A1D23;
+    -fx-border-color: #6E7580;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+.combo-box .list-cell {
+    -fx-text-fill: #E8E9EB;
+    -fx-background-color: #1A1D23;
+}
+.combo-box-popup .list-view {
+    -fx-background-color: #2C2F36;
+}
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #3B5A75;
+}
+
+.radio-button {
+    -fx-text-fill: #E8E9EB;
+}
+.radio-button .radio {
+    -fx-background-color: #1A1D23;
+    -fx-border-color: #6E7580;
+}
+.radio-button:selected .radio .dot {
+    -fx-background-color: #3B5A75;
+}
+
+/* --- CONFIGURACIÓN DE TABLAS (TableView) --- */
+
+.table-view {
+    -fx-background-color: #2C2F36;
+}
+
+/* Fondo de encabezado y área vacía (filler) para eliminar blanco */
+.table-view .column-header-background {
+    -fx-background-color: #2C2F36;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: #2C2F36;
+}
+
+/* Estilo de los encabezados (Títulos) */
+.table-view .column-header {
+    -fx-background-color: #2C2F36;
+    -fx-border-color: #444750;
+    -fx-border-width: 0 1 1 1; /* Agregamos el 1 al final para el borde izquierdo */
+}
+.table-view .column-header .label {
+    -fx-text-fill: #E8E9EB;
+    -fx-font-weight: bold;
+}
+
+/* Estilo de las filas y celdas de datos */
+.table-row-cell {
+    -fx-background-color: #2C2F36;
+}
+.table-row-cell:empty {
+    -fx-background-color: #2C2F36;
+}
+.table-row-cell:selected {
+    -fx-background-color: #3B5A75;
+}
+
+/* Celdas de datos con bordes para el grid (incluye izquierda, derecha y abajo) */
+.table-view .table-cell {
+    -fx-text-fill: #E8E9EB;
+    -fx-border-color: #444750;
+    -fx-border-width: 0 1 1 1; /* Agregamos el 1 al final para el borde izquierdo */
+    -fx-alignment: CENTER-LEFT;
+}
+
+.dialog-pane {
+    -fx-background-color: #2C2F36;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #E8E9EB;
+    -fx-font-size: 14px;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #1A1D23;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E8E9EB;
+}
+
+.dialog-pane .text-field {
+    -fx-background-color: #1A1D23;
+    -fx-text-fill: #E8E9EB;
+    -fx-border-color: #6E7580;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.dialog-pane .text-field:focused {
+    -fx-border-color: #3B5A75;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: #3B5A75;
+    -fx-text-fill: #E8E9EB;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #4C6E8C;
+}
